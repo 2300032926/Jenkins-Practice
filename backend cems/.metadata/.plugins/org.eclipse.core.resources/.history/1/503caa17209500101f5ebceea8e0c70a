@@ -1,0 +1,5 @@
+package event.example.repository;
+
+public interface EventRepository {
+
+}

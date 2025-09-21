@@ -1,0 +1,5 @@
+package event.example.config;
+
+public class CorsConfig {
+
+}

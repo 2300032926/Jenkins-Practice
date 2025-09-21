@@ -1,0 +1,5 @@
+package event.example;
+
+public interface repository {
+
+}

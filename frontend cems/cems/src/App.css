@@ -1,0 +1,171 @@
+/* Full screen layout and centering */
+body, html, #root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+  color: #1a202c;
+}
+
+/* Container */
+.app-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Card style */
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+}
+
+/* Card heading */
+.card h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+  color: #2d3748;
+}
+
+/* Form grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.form-grid input,
+.form-grid textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  outline: none;
+  background: #f9fafb;
+  font-size: 14px;
+  color: #000;           /* black text */
+  transition: 0.2s;
+}
+
+.form-grid input::placeholder,
+.form-grid textarea::placeholder {
+  color: #6b7280;        /* softer grey for placeholder */
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Textarea specifics */
+textarea {
+  grid-column: span 2;
+  resize: none;
+  min-height: 80px;
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn {
+  background: #16a34a;
+  color: white;
+}
+.add-btn:hover { background: #15803d; }
+
+.edit-btn {
+  background: #3b82f6;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+.edit-btn:hover { background: #2563eb; }
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+.delete-btn:hover { background: #dc2626; }
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+}
+
+td {
+  color: #1e293b;
+}
+
+table tr:hover {
+  background: #f1f5f9;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.empty {
+  text-align: center;
+  font-style: italic;
+  color: #64748b;
+  padding: 15px;
+}
