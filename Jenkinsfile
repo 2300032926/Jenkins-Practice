@@ -28,7 +28,7 @@ pipeline {
         // ===== BACKEND =====
         stage('Build Backend') {
             steps {
-                dir('backendcems') {   // ✅ correct location of pom.xml
+                dir('backendcems/cems') {   // ✅ correct location of pom.xml
                     bat 'mvn clean package -DskipTests'
                 }
             }
