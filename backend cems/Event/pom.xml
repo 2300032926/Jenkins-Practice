@@ -16,6 +16,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>Event</name>
     <description>College Event Management Backend</description>
+    <packaging>war</packaging>
 
     <properties>
         <java.version>21</java.version>
@@ -66,6 +67,7 @@
     </dependencies>
 
     <build>
+    <finalName>springbootcemsapi</finalName>
         <plugins>
             <!-- Maven Compiler Plugin -->
             <plugin>
