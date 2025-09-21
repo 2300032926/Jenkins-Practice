@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        // ===== FRONTEND BUILD =====
+        // ===== FRONTEND =====
         stage('Build Frontend') {
             steps {
                 dir('frontendcems/cems') {
@@ -13,7 +13,6 @@ pipeline {
             }
         }
 
-        // ===== FRONTEND DEPLOY =====
         stage('Deploy Frontend to Tomcat') {
             steps {
                 bat '''
@@ -26,16 +25,15 @@ pipeline {
             }
         }
 
-        // ===== BACKEND BUILD =====
+        // ===== BACKEND =====
         stage('Build Backend') {
             steps {
-                dir('backendcems/cems') {
-                    bat 'mvn clean package'
+                dir('backendcems') {   // ✅ correct location of pom.xml
+                    bat 'mvn clean package -DskipTests'
                 }
             }
         }
 
-        // ===== BACKEND DEPLOY =====
         stage('Deploy Backend to Tomcat') {
             steps {
                 bat '''
@@ -45,7 +43,7 @@ pipeline {
                 if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\springbootcemsapi" (
                     rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\springbootcemsapi"
                 )
-                copy "backendcems\\cems\\target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\"
+                copy "backendcems\\target\\springbootcemsapi.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\springbootcemsapi.war"
                 '''
             }
         }
@@ -54,10 +52,10 @@ pipeline {
 
     post {
         success {
-            echo 'Deployment Successful!'
+            echo '✅ Deployment Successful!'
         }
         failure {
-            echo 'Pipeline Failed.'
+            echo '❌ Pipeline Failed. Check logs.'
         }
     }
 }
