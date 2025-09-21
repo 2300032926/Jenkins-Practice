@@ -1,0 +1,17 @@
+// vite.config.js
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  base: '/reactcemsapi/',
+  plugins: [react()],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:8080/api/events",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
+});

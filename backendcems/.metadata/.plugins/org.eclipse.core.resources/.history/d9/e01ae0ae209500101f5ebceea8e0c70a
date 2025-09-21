@@ -1,0 +1,5 @@
+package event.example.model;
+
+public class Event {
+
+}

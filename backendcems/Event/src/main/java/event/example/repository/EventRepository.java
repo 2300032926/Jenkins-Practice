@@ -1,0 +1,19 @@
+//package event.example.repository;
+//
+//import event.example.model.Event;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.stereotype.Repository;
+//
+//@Repository
+//public interface EventRepository extends JpaRepository<Event, Long> {
+//}
+package event.example.repository;
+
+import event.example.model.Event;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EventRepository extends JpaRepository<Event, Long> {
+    // No need to add any custom methods unless needed
+}
