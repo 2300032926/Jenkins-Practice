@@ -23,26 +23,28 @@ function EventList({ events, onDelete, onEdit }) {
           </thead>
           <tbody>
             {events.map((ev) => (
-              <tr key={ev.id}>
-                <td>{ev.id}</td>
+              <tr key={ev.eventId}>
+                <td>{ev.eventId}</td>
                 <td>{ev.eventName}</td>
                 <td>{ev.department}</td>
                 <td>{ev.organizer}</td>
-                <td>{ev.type}</td>
+                <td>{ev.eventType}</td>
                 <td>{ev.date}</td>
                 <td>{ev.venue}</td>
                 <td>{ev.description}</td>
                 <td>
                   <button
                     className="btn edit-btn"
-                    onClick={() => onEdit(ev)}
+                    onClick={() =>
+                      onEdit(ev.eventId, {
+                        ...ev,
+                        eventName: prompt("Edit Event Name:", ev.eventName),
+                      })
+                    }
                   >
                     <FaEdit /> Edit
                   </button>
-                  <button
-                    className="btn delete-btn"
-                    onClick={() => onDelete(ev.id)}
-                  >
+                  <button className="btn delete-btn" onClick={() => onDelete(ev.eventId)}>
                     <FaTrash /> Delete
                   </button>
                 </td>

@@ -1,1 +1,24 @@
-/.metadata/
+# Eclipse workspace
+.metadata/
+
+# Eclipse temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Eclipse WebView / Cache
+*.dat
+*.json
+*.db
+*.lock
+
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+
+# Node / React
+frontendcems/node_modules/
+frontendcems/build/

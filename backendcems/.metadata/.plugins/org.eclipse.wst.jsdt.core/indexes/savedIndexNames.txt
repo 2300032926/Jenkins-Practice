@@ -1,6 +1,0 @@
-INDEX VERSION 1.4+D:\cems\backendcems\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2790352478.index
-542563594.index
-2738583637.index
-4140022673.index
-2231760265.index
