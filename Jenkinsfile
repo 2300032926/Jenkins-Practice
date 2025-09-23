@@ -29,7 +29,7 @@ pipeline {
         // ===== BACKEND BUILD =====
         stage('Build Backend') {
             steps {
-                dir('backendcems/eventmanagement') {
+                dir(''backendcems/eventmanagement'') {
                     bat 'mvn clean package'
                 }
             }
